@@ -2,7 +2,8 @@ USAGE
 =====
 
 1. Setup application
-  
+
+        cp config/database.yml.example config/database.yml
         rake db:bootstrap
   
     Go ahead and load sample data
