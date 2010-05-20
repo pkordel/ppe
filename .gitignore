@@ -1,0 +1,8 @@
+config/database.yml
+log/*
+public/assets/*
+tmp/*
+db/development.sqlite3.db
+public/stylesheets/
+public/javascripts/
+public/images/
