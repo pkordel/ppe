@@ -106,7 +106,8 @@ If you want to automatically capture payments, see site_extension.rb in vendor/e
 That's it.
 I did this with a clean app from spree gem 0.10.2 and the official railsdog ppe extension.
 There are probably more modifications you may want to perform, the intent here is just to get you going.
-I am available for consultant work btw ;)
+
+I am available for consultant work btw :)
 
 Any other problems you may run into are not related to either spree or railsdog's ppe extension.
 
@@ -120,81 +121,3 @@ Hope this helps,
 Peter Kordel
 
 [1] If you check the review checkbox in the admin section for Payment Methods/Paypal Express, the flow is slightly different. Instead of Pay Now on Paypal's order details page, it now says Continue. And the user is directed back to the spree app's Confirmation page showing a place order button. Use whichever suits your needs best. Personally, I leave review unchecked to cut down on the steps in the checkout flow.
-
-
-SUMMARY
-=======
-
-Spree is a complete open source commerce solution for Ruby on Rails.
-It was developed by Sean Schofield under the original name of Rails
-Cart before changing its name to Spree.
-
-Refer to the [Spree ecommerce project page](http://spreecommerce.com) 
-to learn more.
-
-
-QUICK START
-===========
-
-Running the Gem
----------------
-
-1. Install spree Gem (can take a while to install missing gem dependencies)
-
-        (sudo) gem install spree
-
-2. Create Spree Application 
-
-        spree <app_name>
-        cd <app-name>
-
-3. Create your database and edit the _config/database.yml_ to taste.
-
-        rake db:create
-
-    You can skip this step if using sqlite3 as your database.
-
-4. Bootstrap
-
-        rake db:bootstrap
-
-5. Launch Application
-
-        script/server
-
-
-Browse Store
-------------
-
-http://localhost:nnnn/store
-
-Browse Admin Interface
-----------------------
-
-http://localhost:nnnn/admin
-
-
-
-Running from edge sources (latest and greatest features)
---------------------------------------------------------
-
-1. Clone the git repo
-
-        git clone git://github.com/railsdog/spree.git spree
-        cd spree
-
-2. Create the necessary config/database.yml file
-        
-3. Install the gem dependencies
-
-        (sudo) rake gems:install
-        
-4. Bootstrap the database (run the migrations, create admin account, optionally load sample data.)
-
-        rake db:bootstrap
-
-5. Start the server
-
-        script/server
-
-
