@@ -15,90 +15,90 @@ USAGE
 
 2. Configure PPE
 
-  You'll need to have a Paypal developer account (developer.paypal.com) and both buyer and seller test accounts.
+    You'll need to have a Paypal developer account (developer.paypal.com) and both buyer and seller test accounts.
   
-  Tip: these are sandbox only, so use email addresses and passwords that are easy to  remember, e.g. buyer@example.com and seller@example.com.
+    Tip: these are sandbox only, so use email addresses and passwords that are easy to  remember, e.g. buyer@example.com and seller@example.com.
   
-  Your sandbox credentials are available from the API Credentials link.
+    Your sandbox credentials are available from the API Credentials link.
   
-  Start your app
+    Start your app
   
         http://localhost:3000/admin/payment_methods/new
   
-  Name: Paypal Express
+    Name: Paypal Express
   
-  Environment: Development
+    Environment: Development
   
-  Active: Yes
+    Active: Yes
   
-  Provider: BillingIntegration::PaypalExpress
+    Provider: BillingIntegration::PaypalExpress
   
-  Create
+    Create
   
-  Now add your credentials in the screen that follows
+    Now add your credentials in the screen that follows
   
-  review: unchecked [1]
+    review: unchecked [1]
   
-  Signature: signature from your paypal seller test account
+    Signature: signature from your paypal seller test account
   
-  Server: test
+    Server: test
   
-  Test Mode: checked
+    Test Mode: checked
   
-  Password: API Password from your paypal seller test account
+    Password: API Password from your paypal seller test account
   
-  Login: API Username from your paypal seller test account
+    Login: API Username from your paypal seller test account
   
-  Update
+    Update
 
 3. Test it
 
-  Add an item to cart
+    Add an item to cart
   
-  Check out
+    Check out
   
-  Address step: complete it using a valid US address. (Use Sean Schofield's from the railsdog site ;))
+    Address step: complete it using a valid US address. (Use Sean Schofield's from the railsdog site ;))
   
-  Delivery step: pick anything
+    Delivery step: pick anything
   
-  Payment step: pick Paypal Express. If this does not show up as an option, repeat Step 3. 
+    Payment step: pick Paypal Express. If this does not show up as an option, repeat Step 3. 
   
-  The Check out with PayPal button should appear.
+    The Check out with PayPal button should appear.
   
-  Make sure you're logged into your paypal developer account in another browser window before clicking it, as you'll be redirected to your test account (same browser, new window or tab).
+    Make sure you're logged into your paypal developer account in another browser window before clicking it, as you'll be redirected to your test account (same browser, new window or tab).
   
-  On Paypal's site (your previously configured Seller test account), log in as the Buyer. 
+    On Paypal's site (your previously configured Seller test account), log in as the Buyer. 
   
-  If you set up a test buyer account as buyer@example.com previously, use this now.
+    If you set up a test buyer account as buyer@example.com previously, use this now.
   
-  You should now see the paypal order details screen with a Pay Now button.
+    You should now see the paypal order details screen with a Pay Now button.
   
-  Click Pay Now
+    Click Pay Now
   
-  You should now see the spree apps thank you for your order page
+    You should now see the spree apps thank you for your order page
   
 
 4. Check the payment
 
         http://localhost:3000/admin/orders
   
-  Edit your new order
+    Edit your new order
   
-  Go to the Payments section from the right hand menu
+    Go to the Payments section from the right hand menu
   
-  Pending Payments should show Paypal Express with the options of Show and Capture
+    Pending Payments should show Paypal Express with the options of Show and Capture
   
-  Click Show and look over the info available
+    Click Show and look over the info available
   
-  The payment has status Pending with a successful authorization
+    The payment has status Pending with a successful authorization
   
-  Back to Payments
+    Back to Payments
   
-  This time click Capture, then OK
+    This time click Capture, then OK
   
-  Click Show to see what's changed. 
+    Click Show to see what's changed. 
   
-  You should now see two transactions, the previous Authorize transaction and a new Capture one with status Completed
+    You should now see two transactions, the previous Authorize transaction and a new Capture one with status Completed
   
 
 If you want to automatically capture payments, see site_extension.rb in vendor/extensions/site.
