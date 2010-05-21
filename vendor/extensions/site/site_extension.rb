@@ -32,7 +32,52 @@ class SiteExtension < Spree::Extension
           :header_border_color     => "ffffff"
         }
       end
+      
+      # def address_options(order)
+      #   {
+      #     :no_shipping => false,
+      #     :address_override => false
+      #   }
+      # end
+      
+      # def flat_rate_shipping_and_handling_options(order, stage)
+      #   max_fallback = 0.0
+      #   default_category = ShippingCategory.find(:first, :conditions => {:name => 'Default Shipping'})
+      #   default_rate = ShippingRate.all.select{|sr| sr.shipping_category == default_category}.first
+      #   default_shipping_method = default_rate.shipping_method
+      #   
+      #   shipping_options = ShippingMethod.all.map do |shipping_method|
+      #         max_fallback = shipping_method.calculator.preferred_amount if shipping_method.calculator.preferred_amount > max_fallback
+      #             { :name       => "#{shipping_method.id}",
+      #               :label       => "#{shipping_method.name} - #{shipping_method.zone.name}",
+      #               :amount      => (shipping_method.calculator.preferred_amount*100) + 1,
+      #               :default     => (shipping_method.shipping_rates.include? default_rate)}
+      #           end
+      #   
+      #   
+      #   
+      #   
+      #   opts = { :shipping_options  => shipping_options,
+      #            :max_amount  => (order.total + max_fallback)*100
+      #          }
+      #   
+      #   opts[:shipping] = (default_shipping_method.nil? ? 0 : default_shipping_method.calculator.preferred_amount*100) if stage == "checkout"
+      #   
+      #   opts
+      # end
     end
+    
+    # go from address to payment
+    # Checkout.state_machines[:state] = StateMachine::Machine.new(Checkout, :initial => 'address') do
+    #   after_transition :to => 'complete', :do => :complete_order
+    #   before_transition :to => 'complete', :do => :process_payment
+    # 
+    #   event :next do
+    #     transition :to => 'delivery', :from => 'address'
+    #     transition :to => 'payment', :from => 'delivery'
+    #     transition :to => 'complete', :from => 'payment'
+    #   end
+    # end
     
   end
   
